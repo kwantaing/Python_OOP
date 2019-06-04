@@ -8,7 +8,10 @@ class Store:
         return self
 
     def sell_product(self,id):
-        return self.product_list.pop(id)
+        for index in range(len(self.product_list)):
+            if(self.product_list[index].id == id):
+                return self.product_list.pop(index)
+        return "No product exists with that id"
 
     def print_info(self):
         print(self.name)
