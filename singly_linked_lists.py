@@ -76,10 +76,15 @@ class SList:
         return self
 
     def insert_at(self,val,n):
+        if(n == 0):
+            return "Invalid position 0 or less"
         if(n == 1):
             self.add_to_front(val)
             return self
-        if(n == self.find_length_of_SLL):
+        if(n >= self.find_length_of_SLL()):
+            print("Out of bounds")
+            return self
+        if(n == self.find_length_of_SLL()):
             print("back")
             self.add_to_back(val)
             return self
@@ -121,6 +126,6 @@ class SList:
 my_list3 = SList()
 my_list3.add_to_front(3).add_to_front(4).add_to_front(6).add_to_front(7).print_values()
 my_list3.find_length_of_SLL()
-my_list3.insert_at(5,1).print_values()
+my_list3.insert_at(5,3).print_values()
 # my_list3.print_values()
 # my_list3.add_to_back(5).print_values()
